@@ -16,6 +16,7 @@ class kernel (
 ) inherits kernel::params {
 
   validate_re($package_ensure, ['^present$', '^latest$'])
+  validate_re($grub_class, '^grub2?|grubby$')
 
   validate_bool($install_devel, $install_headers)
   validate_bool($set_default_kernel)
